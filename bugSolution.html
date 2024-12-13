@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      var div = document.getElementById("myDiv");
+      div.innerHTML = ""; // Clears the div
+      div.style.display = "none"; // Hides the div
+      div.parentNode.removeChild(div); // Removes the element from the DOM
+    }
+  </script>
+</body>
+</html>
