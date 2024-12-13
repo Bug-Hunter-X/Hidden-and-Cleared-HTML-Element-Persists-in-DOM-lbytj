@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDiv").innerHTML = ""; // Clears the div
+      document.getElementById("myDiv").style.display = "none"; // Hides the div
+      // The bug:  The div is cleared and hidden, but it is not removed from the DOM.
+      // It's still in the page's source, accessible, and its space is still reserved in layout
+    }
+  </script>
+</body>
+</html>
